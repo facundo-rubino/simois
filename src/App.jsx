@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import { Layout } from './components/layout'
+import { ThemeProvider } from './context/ThemeContext'
 
 // Lazy load all pages for code splitting
 const HomePage = lazy(() => import('./pages/HomePage'))
@@ -47,11 +48,13 @@ function AnimatedRoutes() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <Layout>
-        <AnimatedRoutes />
-      </Layout>
-    </BrowserRouter>
+    <ThemeProvider>
+      <BrowserRouter>
+        <Layout>
+          <AnimatedRoutes />
+        </Layout>
+      </BrowserRouter>
+    </ThemeProvider>
   )
 }
 

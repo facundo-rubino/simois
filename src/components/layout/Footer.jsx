@@ -26,11 +26,12 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
           <div>
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-simois-orange rounded-full flex items-center justify-center">
-                <span className="text-white font-bebas text-xl">S</span>
-              </div>
-              <span className="font-bebas text-2xl">SIMOIS</span>
+            <Link to="/" className="inline-block mb-4">
+              <img
+                src="/images/logo.svg"
+                alt="Simois"
+                className="h-8 w-auto"
+              />
             </Link>
             <p className="text-gray-400 text-sm mb-6">
               Barbería premium en Montevideo. Estilo, tradición y vanguardia en cada corte.

@@ -4,12 +4,23 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { navItems } from '../../data/navigation'
 import { Button, MenuIcon, CloseIcon, MoonIcon } from '../common'
 import { useIsMobile } from '../../hooks/useMediaQuery'
+import { useTheme } from '../../context/ThemeContext'
+
+// Sun icon for light mode
+function SunIcon({ className = 'w-6 h-6' }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+    </svg>
+  )
+}
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const location = useLocation()
   const isMobile = useIsMobile()
+  const { isDark, toggleTheme } = useTheme()
 
   // Handle scroll effect
   useEffect(() => {
@@ -40,25 +51,35 @@ export function Header() {
 
   const isActive = (path) => location.pathname === path
 
+  // Dynamic classes based on theme
+  const headerBg = isDark
+    ? isScrolled || isMenuOpen
+      ? 'bg-[#1a1a1a] shadow-md'
+      : 'bg-[#1a1a1a]/95 backdrop-blur-sm'
+    : isScrolled || isMenuOpen
+      ? 'bg-white shadow-md'
+      : 'bg-white/95 backdrop-blur-sm'
+
+  const textColor = isDark ? 'text-white' : 'text-simois-dark'
+  const textColorHover = isDark ? 'hover:text-simois-orange' : 'hover:text-simois-orange'
+  const menuBg = isDark ? 'bg-[#242424]' : 'bg-white'
+  const menuItemHover = isDark ? 'hover:bg-[#333]' : 'hover:bg-simois-light'
+  const borderColor = isDark ? 'border-[#333]' : 'border-gray-100'
+
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled || isMenuOpen
-            ? 'bg-white shadow-md'
-            : 'bg-white/95 backdrop-blur-sm'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerBg}`}
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-simois-orange rounded-full flex items-center justify-center">
-                <span className="text-white font-bebas text-xl">S</span>
-              </div>
-              <span className="font-bebas text-2xl text-simois-dark">
-                SIMOIS
-              </span>
+            <Link to="/" className="flex items-center">
+              <img
+                src="/images/logo.svg"
+                alt="Simois"
+                className="h-8 md:h-10 w-auto"
+              />
             </Link>
 
             {/* Desktop Navigation */}
@@ -70,7 +91,7 @@ export function Header() {
                   className={`font-medium text-sm uppercase tracking-wide transition-colors ${
                     isActive(item.path)
                       ? 'text-simois-orange'
-                      : 'text-simois-dark hover:text-simois-orange'
+                      : `${textColor} ${textColorHover}`
                   }`}
                 >
                   {item.label}
@@ -80,26 +101,39 @@ export function Header() {
 
             {/* Desktop Actions */}
             <div className="hidden lg:flex items-center gap-4">
-              <button className="p-2 text-simois-dark hover:text-simois-orange transition-colors">
-                <MoonIcon className="w-5 h-5" />
+              <button
+                onClick={toggleTheme}
+                className={`p-2 ${textColor} hover:text-simois-orange transition-colors`}
+                aria-label={isDark ? 'Activar modo claro' : 'Activar modo oscuro'}
+              >
+                {isDark ? <SunIcon className="w-5 h-5" /> : <MoonIcon className="w-5 h-5" />}
               </button>
               <Button variant="primary" bookingOptions={{}}>
                 Reservar Turno
               </Button>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-2 text-simois-dark"
-              aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
-            >
-              {isMenuOpen ? (
-                <CloseIcon className="w-6 h-6" />
-              ) : (
-                <MenuIcon className="w-6 h-6" />
-              )}
-            </button>
+            {/* Mobile Actions */}
+            <div className="flex lg:hidden items-center gap-2">
+              <button
+                onClick={toggleTheme}
+                className={`p-2 ${textColor} hover:text-simois-orange transition-colors`}
+                aria-label={isDark ? 'Activar modo claro' : 'Activar modo oscuro'}
+              >
+                {isDark ? <SunIcon className="w-5 h-5" /> : <MoonIcon className="w-5 h-5" />}
+              </button>
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className={`p-2 ${textColor}`}
+                aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+              >
+                {isMenuOpen ? (
+                  <CloseIcon className="w-6 h-6" />
+                ) : (
+                  <MenuIcon className="w-6 h-6" />
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -126,7 +160,7 @@ export function Header() {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'tween', duration: 0.3 }}
-            className="fixed top-16 right-0 bottom-0 w-80 max-w-[calc(100vw-2rem)] bg-white z-50 lg:hidden shadow-xl"
+            className={`fixed top-16 right-0 bottom-0 w-80 max-w-[calc(100vw-2rem)] ${menuBg} z-50 lg:hidden shadow-xl`}
           >
             <div className="flex flex-col h-full">
               <div className="flex-1 overflow-y-auto py-6">
@@ -138,7 +172,7 @@ export function Header() {
                       className={`block py-3 px-4 rounded-lg font-medium transition-colors ${
                         isActive(item.path)
                           ? 'bg-simois-orange/10 text-simois-orange'
-                          : 'text-simois-dark hover:bg-simois-light'
+                          : `${textColor} ${menuItemHover}`
                       }`}
                     >
                       {item.label}
@@ -147,7 +181,7 @@ export function Header() {
                 </div>
               </div>
 
-              <div className="p-6 border-t border-gray-100">
+              <div className={`p-6 border-t ${borderColor}`}>
                 <Button
                   variant="primary"
                   bookingOptions={{}}
