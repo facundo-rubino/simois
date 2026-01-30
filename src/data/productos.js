@@ -1,0 +1,58 @@
+export const productos = [
+  {
+    id: 'cera-mate',
+    nombre: 'Cera Mate',
+    categoria: 'Fijación Media',
+    descripcion: 'Acabado natural sin brillo. Ideal para peinados texturizados y descontracturados que duran todo el día.',
+    imagen: '/images/productos/cera-mate.jpg',
+  },
+  {
+    id: 'polvo-voluminizador',
+    nombre: 'Polvo Voluminizador',
+    categoria: 'Textura & Volumen',
+    descripcion: 'Polvo mágico para dar volumen instantáneo desde la raíz. Acabado mate invisible.',
+    imagen: '/images/productos/polvo.jpg',
+  },
+  {
+    id: 'spray-sal-marina',
+    nombre: 'Surfer Vibes',
+    categoria: 'Spray Sal Marina',
+    descripcion: 'Lográ ese look de playa sin salir de la ciudad. Ondas naturales y fijación ligera.',
+    imagen: '/images/productos/spray-sal.jpg',
+  },
+  {
+    id: 'cera-strong',
+    nombre: 'Cera Strong',
+    categoria: 'Fijación Alta',
+    descripcion: 'Para los estilos más exigentes que necesitan control total. Mantiene tu peinado intacto por 24hs.',
+    imagen: '/images/productos/cera-strong.jpg',
+  },
+  {
+    id: 'shampoo-barba',
+    nombre: 'Shampoo para Barba',
+    categoria: 'Cuidado de Barba',
+    descripcion: 'Limpieza profunda sin resecar. Fórmula enriquecida con aceites naturales que suavizan y dan brillo.',
+    imagen: '/images/productos/shampoo-barba.jpg',
+  },
+  {
+    id: 'aceite-barba',
+    nombre: 'Aceite para Barba',
+    categoria: 'Cuidado de Barba',
+    descripcion: 'Hidratación intensa y aroma premium. Doma los vellos rebeldes y nutre la piel debajo de la barba.',
+    imagen: '/images/productos/aceite-barba.jpg',
+  },
+  {
+    id: 'after-shave',
+    nombre: 'After Shave',
+    categoria: 'Post Afeitado',
+    descripcion: 'Calma e hidrata la piel después del afeitado. Sensación refrescante sin alcohol.',
+    imagen: '/images/productos/after-shave.jpg',
+  },
+  {
+    id: 'shaving-gel',
+    nombre: 'Shaving Gel',
+    categoria: 'Afeitado',
+    descripcion: 'Gel transparente para un afeitado de precisión. Permite ver exactamente dónde estás afeitando.',
+    imagen: '/images/productos/shaving-gel.jpg',
+  },
+]
