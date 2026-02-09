@@ -5,35 +5,36 @@ export function HeroSection() {
   const isMobile = useIsMobile()
 
   return (
-    <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-center overflow-hidden bg-simois-bordo">
-      {/* Background Image/Video Placeholder */}
+    <section className="relative min-h-[85vh] md:min-h-[92vh] flex items-center overflow-hidden bg-simois-bordo">
+      {/* Background Image with overlay */}
       <div className="absolute inset-0">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `linear-gradient(to bottom, rgba(63, 32, 33, 0.7), rgba(63, 32, 33, 0.85)), url('https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=1920&q=80')`,
+            backgroundImage: `linear-gradient(135deg, rgba(63, 32, 33, 0.85), rgba(63, 32, 33, 0.75)), url('https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=1920&q=80')`,
           }}
+          role="img"
+          aria-label="Interior de Barbería Simois"
         />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-12 md:py-20">
+      <div className="relative z-10 container mx-auto px-4 lg:px-6 py-16 md:py-24">
         <div className="max-w-3xl mx-auto text-center md:text-left md:mx-0">
-          {/* Small text above title */}
-          <p className="text-simois-orange font-medium text-sm tracking-widest uppercase mb-4">
+          {/* Eyebrow text */}
+          <p className="text-simois-orange font-semibold text-xs md:text-sm tracking-[0.2em] uppercase mb-5 md:mb-6">
             Premium Barbershop Experience
           </p>
 
-          {/* Main Title */}
-          <h1 className="font-bebas text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-none mb-2">
+          {/* Main Title - Single h1 for SEO */}
+          <h1 className="font-bebas text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-white leading-[0.95] mb-6 md:mb-8">
             Tu Estilo
-          </h1>
-          <h1 className="font-bebas text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-simois-orange leading-none mb-6">
-            Tus Reglas
+            <br />
+            <span className="text-simois-orange">Tus Reglas</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-white/80 text-lg md:text-xl max-w-xl mb-8">
+          <p className="text-white/75 text-base md:text-xl max-w-xl mb-10 leading-relaxed mx-auto md:mx-0">
             Conocé a los maestros detrás de cada corte. Nuestro equipo de expertos está listo para elevar tu imagen al siguiente nivel.
           </p>
 
@@ -47,10 +48,9 @@ export function HeroSection() {
               Reservar Ahora
             </Button>
             <Button
-              variant="outline"
+              variant="outline-white"
               size="lg"
               to="/productos"
-              className="border-white text-white hover:bg-white hover:text-simois-bordo"
             >
               Ver Productos
             </Button>
@@ -58,8 +58,8 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Decorative element */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
+      {/* Bottom vignette — no color dependency, just subtle darkening */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 md:h-40 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
     </section>
   )
 }

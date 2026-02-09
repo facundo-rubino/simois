@@ -31,10 +31,10 @@ export function Card({
   }
 
   const hoverClass = hover
-    ? 'transition-all duration-300 hover:shadow-lg hover:-translate-y-1'
+    ? 'transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5'
     : ''
 
-  const borderClass = border ? 'border border-gray-200' : ''
+  const borderClass = border ? 'border border-gray-200/80' : ''
 
   return (
     <div

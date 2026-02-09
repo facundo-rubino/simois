@@ -21,28 +21,30 @@ export function Footer() {
   ]
 
   return (
-    <footer className="bg-simois-dark text-white pb-20 lg:pb-0">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+    <footer className="bg-simois-dark text-white pb-24 lg:pb-0" role="contentinfo">
+      <div className="container mx-auto px-4 lg:px-6 py-14 lg:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           {/* Brand */}
-          <div>
-            <Link to="/" className="inline-block mb-4">
+          <div className="md:col-span-2 lg:col-span-1">
+            <Link to="/" className="inline-block mb-5" aria-label="Simois - Ir al inicio">
               <img
                 src="/images/logo.svg"
-                alt="Simois"
-                className="h-8 w-auto"
+                alt="Simois Barbería"
+                className="h-9 w-auto"
+                width="120"
+                height="36"
               />
             </Link>
-            <p className="text-gray-400 text-sm mb-6">
+            <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-xs">
               Barbería premium en Montevideo. Estilo, tradición y vanguardia en cada corte.
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
               <a
                 href={SOCIAL_LINKS.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-simois-orange transition-colors"
-                aria-label="Instagram"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-simois-orange transition-all"
+                aria-label="Seguinos en Instagram"
               >
                 <InstagramIcon className="w-5 h-5" />
               </a>
@@ -50,8 +52,8 @@ export function Footer() {
                 href={SOCIAL_LINKS.tiktok}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-simois-orange transition-colors"
-                aria-label="TikTok"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-simois-orange transition-all"
+                aria-label="Seguinos en TikTok"
               >
                 <TikTokIcon className="w-5 h-5" />
               </a>
@@ -59,8 +61,8 @@ export function Footer() {
                 href="https://facebook.com/simoisbarberia"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-simois-orange transition-colors"
-                aria-label="Facebook"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-simois-orange transition-all"
+                aria-label="Seguinos en Facebook"
               >
                 <FacebookIcon className="w-5 h-5" />
               </a>
@@ -69,14 +71,15 @@ export function Footer() {
 
           {/* Explorar */}
           <div>
-            <h4 className="font-bebas text-lg mb-4">Explorar</h4>
-            <ul className="space-y-2">
+            <h4 className="font-bebas text-lg tracking-wider mb-5 text-white/90">Explorar</h4>
+            <ul className="space-y-3">
               {exploreLinks.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-gray-400 hover:text-simois-orange transition-colors text-sm"
+                    className="text-gray-400 hover:text-simois-orange transition-colors text-sm inline-flex items-center gap-1.5 group"
                   >
+                    <span className="w-0 group-hover:w-2 h-px bg-simois-orange transition-all duration-200" />
                     {link.label}
                   </Link>
                 </li>
@@ -86,8 +89,8 @@ export function Footer() {
 
           {/* Nuestros Locales */}
           <div>
-            <h4 className="font-bebas text-lg mb-4">Nuestros Locales</h4>
-            <ul className="space-y-2">
+            <h4 className="font-bebas text-lg tracking-wider mb-5 text-white/90">Nuestros Locales</h4>
+            <ul className="space-y-3">
               {localesLinks.map((link) => (
                 <li key={link.path}>
                   <Link
@@ -104,28 +107,28 @@ export function Footer() {
 
           {/* Contacto */}
           <div>
-            <h4 className="font-bebas text-lg mb-4">Contacto</h4>
+            <h4 className="font-bebas text-lg tracking-wider mb-5 text-white/90">Contacto</h4>
             <ul className="space-y-3">
-              <li className="flex items-start gap-2 text-gray-400 text-sm">
+              <li className="flex items-start gap-2.5 text-gray-400 text-sm">
                 <MapPinIcon className="w-4 h-4 text-simois-orange mt-0.5 shrink-0" />
                 <span>Montevideo, Uruguay</span>
               </li>
-              <li className="flex items-center gap-2 text-gray-400 text-sm">
+              <li className="flex items-center gap-2.5 text-gray-400 text-sm">
                 <PhoneIcon className="w-4 h-4 text-simois-orange shrink-0" />
                 <a href="tel:+59899123456" className="hover:text-simois-orange transition-colors">
                   +598 99 123 456
                 </a>
               </li>
             </ul>
-            <div className="mt-4 pt-4 border-t border-gray-700">
-              <p className="text-sm text-gray-500 mb-1">Horarios:</p>
+            <div className="mt-5 pt-5 border-t border-white/10">
+              <p className="text-xs text-gray-500 uppercase tracking-wider mb-1.5">Horarios</p>
               <p className="text-sm text-gray-400">Lun - Sáb: 10:00 - 20:00</p>
             </div>
           </div>
         </div>
 
         {/* Bottom */}
-        <div className="mt-12 pt-8 border-t border-gray-700 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="mt-14 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-gray-500">
             © {currentYear} Barbería Simois. Todos los derechos reservados.
           </p>

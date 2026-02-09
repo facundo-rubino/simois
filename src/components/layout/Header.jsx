@@ -70,29 +70,33 @@ export function Header() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerBg}`}
+        role="banner"
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 lg:px-6">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <Link to="/" className="flex items-center">
+            <Link to="/" className="flex items-center" aria-label="Simois - Ir al inicio">
               <img
                 src="/images/logo.svg"
-                alt="Simois"
+                alt="Simois Barbería"
                 className="h-8 md:h-10 w-auto"
+                width="120"
+                height="40"
               />
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-8">
+            <nav className="hidden lg:flex items-center gap-1" aria-label="Navegación principal">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`font-medium text-sm uppercase tracking-wide transition-colors ${
+                  className={`font-medium text-sm uppercase tracking-wide transition-colors px-3 py-2 rounded-md ${
                     isActive(item.path)
-                      ? 'text-simois-orange'
-                      : `${textColor} ${textColorHover}`
+                      ? 'text-simois-orange bg-simois-orange/8'
+                      : `${textColor} ${textColorHover} hover:bg-simois-orange/5`
                   }`}
+                  aria-current={isActive(item.path) ? 'page' : undefined}
                 >
                   {item.label}
                 </Link>
@@ -100,11 +104,12 @@ export function Header() {
             </nav>
 
             {/* Desktop Actions */}
-            <div className="hidden lg:flex items-center gap-4">
+            <div className="hidden lg:flex items-center gap-3">
               <button
                 onClick={toggleTheme}
-                className={`p-2 ${textColor} hover:text-simois-orange transition-colors`}
+                className={`p-2.5 rounded-full ${textColor} hover:text-simois-orange hover:bg-simois-orange/10 transition-colors`}
                 aria-label={isDark ? 'Activar modo claro' : 'Activar modo oscuro'}
+                title={isDark ? 'Modo claro' : 'Modo oscuro'}
               >
                 {isDark ? <SunIcon className="w-5 h-5" /> : <MoonIcon className="w-5 h-5" />}
               </button>
@@ -114,18 +119,20 @@ export function Header() {
             </div>
 
             {/* Mobile Actions */}
-            <div className="flex lg:hidden items-center gap-2">
+            <div className="flex lg:hidden items-center gap-1">
               <button
                 onClick={toggleTheme}
-                className={`p-2 ${textColor} hover:text-simois-orange transition-colors`}
+                className={`p-2.5 rounded-full ${textColor} hover:text-simois-orange hover:bg-simois-orange/10 transition-colors`}
                 aria-label={isDark ? 'Activar modo claro' : 'Activar modo oscuro'}
               >
                 {isDark ? <SunIcon className="w-5 h-5" /> : <MoonIcon className="w-5 h-5" />}
               </button>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className={`p-2 ${textColor}`}
+                className={`p-2.5 rounded-full ${textColor} hover:bg-simois-orange/10 transition-colors`}
                 aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+                aria-expanded={isMenuOpen}
+                aria-controls="mobile-menu"
               >
                 {isMenuOpen ? (
                   <CloseIcon className="w-6 h-6" />
@@ -156,24 +163,27 @@ export function Header() {
       <AnimatePresence>
         {isMenuOpen && isMobile && (
           <motion.nav
+            id="mobile-menu"
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'tween', duration: 0.3 }}
             className={`fixed top-16 right-0 bottom-0 w-80 max-w-[calc(100vw-2rem)] ${menuBg} z-50 lg:hidden shadow-xl`}
+            aria-label="Menú de navegación"
           >
             <div className="flex flex-col h-full">
               <div className="flex-1 overflow-y-auto py-6">
-                <div className="px-6 space-y-1">
+                <div className="px-5 space-y-1">
                   {navItems.map((item) => (
                     <Link
                       key={item.path}
                       to={item.path}
-                      className={`block py-3 px-4 rounded-lg font-medium transition-colors ${
+                      className={`flex items-center gap-3 py-3.5 px-4 rounded-xl font-medium transition-all ${
                         isActive(item.path)
                           ? 'bg-simois-orange/10 text-simois-orange'
                           : `${textColor} ${menuItemHover}`
                       }`}
+                      aria-current={isActive(item.path) ? 'page' : undefined}
                     >
                       {item.label}
                     </Link>
@@ -181,7 +191,7 @@ export function Header() {
                 </div>
               </div>
 
-              <div className={`p-6 border-t ${borderColor}`}>
+              <div className={`p-5 border-t ${borderColor}`}>
                 <Button
                   variant="primary"
                   bookingOptions={{}}

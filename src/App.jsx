@@ -15,10 +15,10 @@ const ProductosPage = lazy(() => import('./pages/ProductosPage'))
 // Loading component
 function PageLoader() {
   return (
-    <div className="min-h-[60vh] flex items-center justify-center">
+    <div className="min-h-[60vh] flex items-center justify-center" role="status" aria-live="polite">
       <div className="flex flex-col items-center gap-4">
-        <div className="w-12 h-12 border-4 border-simois-orange border-t-transparent rounded-full animate-spin" />
-        <p className="text-simois-dark/60 font-medium">Cargando...</p>
+        <div className="w-10 h-10 border-3 border-simois-orange border-t-transparent rounded-full animate-spin" />
+        <p className="text-simois-dark/50 text-sm font-medium">Cargando...</p>
       </div>
     </div>
   )

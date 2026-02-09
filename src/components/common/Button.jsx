@@ -17,23 +17,27 @@ export function Button({
   const { redirectToBooking } = useBookingRedirect()
 
   const baseStyles =
-    'inline-flex items-center justify-center font-bebas tracking-wider uppercase transition-all duration-200 rounded-md cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed'
+    'inline-flex items-center justify-center font-bebas tracking-wider uppercase transition-all duration-200 rounded-lg cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-simois-orange'
 
   const variants = {
     primary:
-      'bg-simois-orange text-white hover:bg-simois-orange/90 active:scale-[0.98]',
+      'bg-simois-orange text-white hover:bg-simois-orange/85 active:scale-[0.97] shadow-sm hover:shadow-md',
     secondary:
-      'bg-simois-bordo text-white hover:bg-simois-bordo/90 active:scale-[0.98]',
+      'bg-simois-bordo text-white hover:bg-simois-bordo/85 active:scale-[0.97] shadow-sm hover:shadow-md',
     outline:
-      'border-2 border-simois-orange text-simois-orange hover:bg-simois-orange hover:text-white',
-    ghost: 'text-simois-dark hover:text-simois-orange hover:bg-simois-light/50',
-    dark: 'bg-simois-dark text-white hover:bg-simois-dark/90 active:scale-[0.98]',
+      'border-2 border-simois-orange text-simois-orange hover:bg-simois-orange hover:text-white active:scale-[0.97]',
+    'outline-white':
+      'border-2 border-white/80 text-white hover:bg-white hover:text-simois-bordo active:scale-[0.97]',
+    'outline-dark':
+      'border-2 border-white/80 text-white hover:bg-white hover:text-simois-dark active:scale-[0.97]',
+    ghost: 'text-simois-dark hover:text-simois-orange hover:bg-simois-orange/5',
+    dark: 'bg-simois-dark text-white hover:bg-simois-dark/85 active:scale-[0.97] shadow-sm hover:shadow-md',
   }
 
   const sizes = {
-    sm: 'px-4 py-2 text-sm',
-    md: 'px-6 py-3 text-base',
-    lg: 'px-8 py-4 text-lg',
+    sm: 'px-4 py-2 text-sm gap-1.5',
+    md: 'px-6 py-3 text-base gap-2',
+    lg: 'px-8 py-3.5 text-lg gap-2',
   }
 
   const buttonClasses = `${baseStyles} ${variants[variant]} ${sizes[size]} ${fullWidth ? 'w-full' : ''} ${className}`

@@ -2,6 +2,7 @@ export function SectionTitle({
   title,
   subtitle,
   highlight,
+  description,
   align = 'center',
   className = '',
   size = 'lg',
@@ -22,16 +23,23 @@ export function SectionTitle({
   return (
     <div className={`${alignments[align]} ${className}`}>
       {subtitle && (
-        <p className="text-simois-orange font-medium text-sm tracking-widest uppercase mb-2">
+        <p className="text-simois-orange font-semibold text-xs md:text-sm tracking-[0.15em] uppercase mb-3">
           {subtitle}
         </p>
       )}
-      <h2 className={`font-bebas ${sizes[size]} text-simois-dark`}>
+      <h2 className={`font-bebas ${sizes[size]} text-simois-dark leading-tight`}>
         {title}
         {highlight && (
           <span className="text-simois-orange"> {highlight}</span>
         )}
       </h2>
+      {description && (
+        <p className={`text-simois-dark/60 mt-4 max-w-xl leading-relaxed text-sm md:text-base ${
+          align === 'center' ? 'mx-auto' : ''
+        }`}>
+          {description}
+        </p>
+      )}
     </div>
   )
 }

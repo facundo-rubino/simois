@@ -2,17 +2,18 @@ import { CheckIcon } from '../common'
 
 export function CursoCard({ curso }) {
   return (
-    <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all">
+    <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
       {/* Image */}
       <div className="relative aspect-video overflow-hidden">
         <img
           src={curso.imagen || `https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=600&q=80`}
           alt={curso.nombre}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
         />
         {/* Badge */}
         <div className="absolute top-4 right-4">
-          <span className="inline-block px-3 py-1 bg-simois-orange text-white text-xs font-medium rounded-full">
+          <span className="inline-block px-3 py-1.5 bg-simois-orange text-white text-xs font-semibold rounded-full shadow-sm">
             {curso.tipo}
           </span>
         </div>
@@ -20,13 +21,13 @@ export function CursoCard({ curso }) {
 
       {/* Content */}
       <div className="p-6">
-        <h3 className="font-bebas text-2xl text-simois-dark mb-2">
+        <h3 className="font-bebas text-2xl text-simois-dark mb-3">
           {curso.nombre}
         </h3>
 
-        <ul className="space-y-2 mb-4">
+        <ul className="space-y-2.5 mb-4">
           {curso.contenido.map((item, index) => (
-            <li key={index} className="flex items-start gap-2 text-sm text-simois-dark/70">
+            <li key={index} className="flex items-start gap-2.5 text-sm text-simois-dark/70">
               <CheckIcon className="w-4 h-4 text-simois-orange shrink-0 mt-0.5" />
               {item}
             </li>
