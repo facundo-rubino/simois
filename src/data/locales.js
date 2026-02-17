@@ -1,10 +1,10 @@
 export const locales = [
   {
-    id: 'punta-carretas-1',
-    nombre: 'Punta Carretas 1',
-    direccion: 'Ellauri 350 esq. Solano García',
+    id: 'scoseria',
+    nombre: 'Scoseria',
+    direccion: 'Doctor José Scoseria 2727',
     telefono: '+598 99 123 456',
-    coordenadas: { lat: -34.9147, lng: -56.1593 },
+    coordenadas: { lat: -34.9150134, lng: -56.1533037 },
     horarios: {
       lunes: '10:00 - 20:00',
       martes: '10:00 - 20:00',
@@ -19,11 +19,11 @@ export const locales = [
     distancia: '0.8 km de ti',
   },
   {
-    id: 'punta-carretas-2',
-    nombre: 'Punta Carretas 2',
-    direccion: 'Solano García 2400',
+    id: '21set',
+    nombre: '21 de Setiembre',
+    direccion: '21 de setiembre 2896',
     telefono: '+598 99 234 567',
-    coordenadas: { lat: -34.9167, lng: -56.1573 },
+    coordenadas: { lat: -34.9193864, lng: -56.1544857 },
     horarios: {
       lunes: '10:00 - 20:00',
       martes: '10:00 - 20:00',
@@ -38,11 +38,11 @@ export const locales = [
     distancia: '1.2 km de ti',
   },
   {
-    id: 'pocitos',
-    nombre: 'Pocitos',
-    direccion: 'Bvar. España 2830',
+    id: 'rambla',
+    nombre: 'Rambla',
+    direccion: 'Rbla. República del Perú 1079',
     telefono: '+598 99 345 678',
-    coordenadas: { lat: -34.9097, lng: -56.1493 },
+    coordenadas: { lat: -34.9127375, lng: -56.1470275 },
     horarios: {
       lunes: '10:00 - 20:00',
       martes: '10:00 - 20:00',
@@ -60,9 +60,9 @@ export const locales = [
   {
     id: 'la-tahona',
     nombre: 'La Tahona',
-    direccion: 'Plaza Tahona Local 4',
+    direccion: 'km 3, Cam. de Los Horneros, La Tahona',
     telefono: '+598 99 456 789',
-    coordenadas: { lat: -34.8747, lng: -56.0693 },
+    coordenadas: { lat: -34.7919862, lng: -55.9762954 },
     horarios: {
       lunes: '10:00 - 20:00',
       martes: '10:00 - 20:00',
@@ -79,9 +79,9 @@ export const locales = [
   {
     id: 'car-one',
     nombre: 'Car One',
-    direccion: 'Ruta Interbalnearia Km 24',
+    direccion: '52M9+CG9, Interbalnearia, Canelones',
     telefono: '+598 99 567 890',
-    coordenadas: { lat: -34.8547, lng: -55.9493 },
+    coordenadas: { lat: -34.8164528, lng: -55.9811467 },
     horarios: {
       lunes: '10:00 - 20:00',
       martes: '10:00 - 20:00',
@@ -98,9 +98,9 @@ export const locales = [
   {
     id: 'centro',
     nombre: 'Centro',
-    direccion: '18 de Julio 1200',
+    direccion: 'Julio Herrera y Obes 1521',
     telefono: '+598 99 678 901',
-    coordenadas: { lat: -34.9067, lng: -56.1893 },
+    coordenadas: { lat: -34.9029748, lng: -56.1951632 },
     horarios: {
       lunes: '10:00 - 20:00',
       martes: '10:00 - 20:00',
@@ -110,7 +110,7 @@ export const locales = [
       sabado: '09:00 - 18:00',
       domingo: 'Cerrado',
     },
-    activo: false,
-    proximaApertura: true,
+    activo: true,
+    proximaApertura: false,
   },
 ]

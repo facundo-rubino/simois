@@ -42,7 +42,12 @@ export function BarberoCard({ barbero, compact = false }) {
         <Button
           variant="primary"
           fullWidth
-          bookingOptions={{ barberoId: barbero.id, localId: barbero.localId }}
+          bookingOptions={{
+            ...(barbero.profesionalId && barbero.sucursalId
+              ? { profesionalId: barbero.profesionalId, sucursalId: barbero.sucursalId }
+              : { barberoId: barbero.id, localId: barbero.localId }
+            )
+          }}
         >
           Reservar Turno →
         </Button>
