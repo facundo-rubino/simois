@@ -6,7 +6,6 @@ import { ThemeProvider } from './context/ThemeContext'
 
 // Lazy load all pages for code splitting
 const HomePage = lazy(() => import('./pages/HomePage'))
-const ServiciosPage = lazy(() => import('./pages/ServiciosPage'))
 const BarberosPage = lazy(() => import('./pages/BarberosPage'))
 const AcademyPage = lazy(() => import('./pages/AcademyPage'))
 const LocalesPage = lazy(() => import('./pages/LocalesPage'))
@@ -33,7 +32,6 @@ function AnimatedRoutes() {
       <Suspense fallback={<PageLoader />}>
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<HomePage />} />
-          <Route path="/servicios" element={<ServiciosPage />} />
           <Route path="/barberos" element={<BarberosPage />} />
           <Route path="/academy" element={<AcademyPage />} />
           <Route path="/locales" element={<LocalesPage />} />

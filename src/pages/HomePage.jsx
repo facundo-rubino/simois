@@ -3,7 +3,6 @@ import {
   HeroSection,
   LocalSelector,
   AboutSection,
-  ServicesPreview,
   ProductsPreview,
   CTASection,
 } from '../components/home'
@@ -14,7 +13,6 @@ export default function HomePage() {
       <HeroSection />
       <LocalSelector />
       <AboutSection />
-      <ServicesPreview />
       <ProductsPreview />
       <CTASection />
     </PageTransition>

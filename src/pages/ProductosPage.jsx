@@ -1,18 +1,10 @@
 import { PageTransition } from '../components/layout'
-import { SectionTitle, MapPinIcon, ArrowRightIcon } from '../components/common'
+import { MapPinIcon, ArrowRightIcon } from '../components/common'
 import { ProductoCard } from '../components/productos'
 import { productos } from '../data/productos'
 import { Link } from 'react-router-dom'
 
 export default function ProductosPage() {
-  // Group products by category
-  const stylingProducts = productos.filter(p =>
-    ['Fijación Media', 'Fijación Alta', 'Textura & Volumen', 'Spray Sal Marina'].includes(p.categoria)
-  )
-  const barbaCuidado = productos.filter(p =>
-    ['Cuidado de Barba', 'Afeitado', 'Post Afeitado'].includes(p.categoria)
-  )
-
   return (
     <PageTransition>
       {/* Hero */}
@@ -33,46 +25,20 @@ export default function ProductosPage() {
         </div>
       </section>
 
-      {/* Styling Products */}
-      <section className="py-20 md:py-28 bg-white">
-        <div className="container mx-auto px-4 lg:px-6">
-          <SectionTitle
-            subtitle="Estilizado"
-            title="Ceras &"
-            highlight="Styling"
-            align="left"
-            className="mb-14"
-          />
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {stylingProducts.map((producto) => (
-              <ProductoCard key={producto.id} producto={producto} />
-            ))}
+      {/* All products — editorial alternating layout */}
+      <section className="bg-white dark:bg-simois-dark">
+        {productos.map((producto, index) => (
+          <div key={producto.id}>
+            <ProductoCard producto={producto} index={index} />
+            {index < productos.length - 1 && (
+              <div className="border-t border-gray-100 dark:border-white/10" />
+            )}
           </div>
-        </div>
-      </section>
-
-      {/* Barba Products */}
-      <section className="py-20 md:py-28 bg-simois-light">
-        <div className="container mx-auto px-4 lg:px-6">
-          <SectionTitle
-            subtitle="Cuidado"
-            title="Barba &"
-            highlight="Afeitado"
-            align="left"
-            className="mb-14"
-          />
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {barbaCuidado.map((producto) => (
-              <ProductoCard key={producto.id} producto={producto} />
-            ))}
-          </div>
-        </div>
+        ))}
       </section>
 
       {/* Where to buy */}
-      <section className="py-14 md:py-20 bg-white">
+      <section className="py-14 md:py-20 bg-simois-light dark:bg-simois-dark/50">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="bg-simois-dark rounded-2xl p-8 md:p-14 text-center">
             <h2 className="font-bebas text-3xl md:text-4xl lg:text-5xl text-white mb-4">

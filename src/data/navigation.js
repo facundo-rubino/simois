@@ -5,11 +5,6 @@ export const navItems = [
     icon: 'home',
   },
   {
-    path: '/servicios',
-    label: 'Servicios',
-    icon: 'scissors',
-  },
-  {
     path: '/barberos',
     label: 'Barberos',
     icon: 'users',
@@ -39,9 +34,9 @@ export const mobileNavItems = [
     icon: 'home',
   },
   {
-    path: '/servicios',
-    label: 'Servicios',
-    icon: 'scissors',
+    path: '/locales',
+    label: 'Locales',
+    icon: 'map-pin',
   },
   {
     path: '/barberos',

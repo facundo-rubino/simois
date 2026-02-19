@@ -6,7 +6,6 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   const exploreLinks = [
-    { label: 'Servicios', path: '/servicios' },
     { label: 'Barberos', path: '/barberos' },
     { label: 'Academy', path: '/academy' },
     { label: 'Productos', path: '/productos' },
