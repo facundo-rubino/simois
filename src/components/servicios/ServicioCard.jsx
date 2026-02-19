@@ -3,7 +3,7 @@ import { Button, StarIcon, CheckIcon } from '../common'
 export function ServicioCard({ servicio }) {
   return (
     <div
-      className={`bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative ${
+      className={`bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative group ${
         servicio.destacado ? 'ring-2 ring-simois-orange' : ''
       }`}
     >
@@ -22,7 +22,7 @@ export function ServicioCard({ servicio }) {
         <img
           src={servicio.imagen || `https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=600&q=80`}
           alt={servicio.nombre}
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
         />
         {/* Category badge */}

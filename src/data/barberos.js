@@ -18,7 +18,7 @@ export const barberos = [
     especialidades: ['Skin Fade', 'Diseños'],
     localId: 'rambla',
     localNombre: 'Rambla',
-      profesionalId: '317753',
+    profesionalId: '317753',
     sucursalId: '44341',
   },
   {

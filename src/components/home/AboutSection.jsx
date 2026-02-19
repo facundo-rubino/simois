@@ -22,7 +22,7 @@ export function AboutSection() {
 
           {/* Content */}
           <div>
-            <p className="text-simois-orange font-semibold text-xs tracking-[0.15em] uppercase mb-3">
+            <p className="text-simois-orange font-semibold text-xs md:text-sm tracking-[0.15em] uppercase mb-3">
               Quienes somos
             </p>
             <h2 className="font-bebas text-4xl md:text-5xl lg:text-6xl text-simois-dark leading-tight mb-6">

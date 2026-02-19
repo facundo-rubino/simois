@@ -66,6 +66,14 @@ html.dark .text-simois-dark\/50 {
   color: rgba(242, 242, 242, 0.5) !important;
 }
 
+html.dark .text-simois-dark\/55 {
+  color: rgba(242, 242, 242, 0.55) !important;
+}
+
+html.dark .text-simois-dark\/45 {
+  color: rgba(242, 242, 242, 0.45) !important;
+}
+
 html.dark .border-gray-100,
 html.dark .border-gray-200 {
   border-color: #333 !important;

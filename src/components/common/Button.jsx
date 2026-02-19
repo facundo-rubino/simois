@@ -51,13 +51,13 @@ export function Button({
     }
   }
 
-  // External link
+  // Link (external or anchor)
   if (href) {
+    const isAnchor = href.startsWith('#')
     return (
       <a
         href={href}
-        target="_blank"
-        rel="noopener noreferrer"
+        {...(!isAnchor && { target: '_blank', rel: 'noopener noreferrer' })}
         className={buttonClasses}
         {...props}
       >

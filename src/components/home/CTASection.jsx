@@ -10,13 +10,13 @@ export function CTASection() {
       </div>
 
       <div className="container mx-auto px-4 lg:px-6 text-center relative z-10">
-        <p className="text-simois-orange font-semibold text-xs tracking-[0.15em] uppercase mb-4">
+        <p className="text-simois-orange font-semibold text-xs md:text-sm tracking-[0.15em] uppercase mb-4">
           Reservá ahora
         </p>
         <h2 className="font-bebas text-4xl md:text-5xl lg:text-6xl text-white mb-5 leading-tight">
           ¿Listo Para Tu Cambio?
         </h2>
-        <p className="text-white/65 max-w-xl mx-auto mb-10 text-base md:text-lg leading-relaxed">
+        <p className="text-white/70 max-w-xl mx-auto mb-10 text-base md:text-lg leading-relaxed">
           Seleccioná tu local preferido y reservá tu turno online en segundos. Evitá esperas y asegurá tu lugar con los mejores.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

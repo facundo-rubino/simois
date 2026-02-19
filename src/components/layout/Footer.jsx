@@ -13,9 +13,9 @@ export function Footer() {
   ]
 
   const localesLinks = [
-    { label: 'Punta Carretas 1', path: '/locales#punta-carretas-1' },
-    { label: 'Punta Carretas 2', path: '/locales#punta-carretas-2' },
-    { label: 'Pocitos', path: '/locales#pocitos' },
+    { label: 'Scoseria', path: '/locales#scoseria' },
+    { label: '21 de Setiembre', path: '/locales#21set' },
+    { label: 'Rambla', path: '/locales#rambla' },
     { label: 'La Tahona', path: '/locales#la-tahona' },
     { label: 'Car One', path: '/locales#car-one' },
   ]

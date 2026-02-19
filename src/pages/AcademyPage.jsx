@@ -16,7 +16,7 @@ export default function AcademyPage() {
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
             {/* Text */}
             <div>
-              <p className="text-simois-orange font-semibold text-xs tracking-[0.15em] uppercase mb-4">
+              <p className="text-simois-orange font-semibold text-xs md:text-sm tracking-[0.15em] uppercase mb-4">
                 Formación & Franquicias
               </p>
               <h1 className="font-bebas text-5xl md:text-6xl lg:text-7xl text-simois-dark leading-[0.95] mb-6">
@@ -79,7 +79,7 @@ export default function AcademyPage() {
           <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
             {/* Academy */}
             <div id="cursos">
-              <p className="text-simois-orange font-semibold text-xs tracking-[0.15em] uppercase mb-3">
+              <p className="text-simois-orange font-semibold text-xs md:text-sm tracking-[0.15em] uppercase mb-3">
                 Educación
               </p>
               <h2 className="font-bebas text-4xl lg:text-5xl text-simois-dark mb-5 leading-tight">
@@ -102,7 +102,7 @@ export default function AcademyPage() {
 
             {/* Franquicia */}
             <div id="franquicia">
-              <p className="text-simois-orange font-semibold text-xs tracking-[0.15em] uppercase mb-3">
+              <p className="text-simois-orange font-semibold text-xs md:text-sm tracking-[0.15em] uppercase mb-3">
                 Negocios
               </p>
               <h2 className="font-bebas text-4xl lg:text-5xl text-simois-dark mb-5 leading-tight">
@@ -160,7 +160,7 @@ export default function AcademyPage() {
                 <h2 className="font-bebas text-3xl md:text-4xl lg:text-5xl text-white mb-3 leading-tight">
                   Productos <span className="text-simois-orange">Premium</span>
                 </h2>
-                <p className="text-white/60 max-w-md leading-relaxed">
+                <p className="text-white/70 max-w-md leading-relaxed">
                   Descubre nuestra línea exclusiva de ceras, sprays y cuidado capilar. Diseñados por barberos, para un acabado profesional en casa.
                 </p>
               </div>

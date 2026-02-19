@@ -1,10 +1,12 @@
 import { Header } from './Header'
 import { Footer } from './Footer'
 import { MobileNav } from './MobileNav'
+import { ScrollToTop } from './ScrollToTop'
 
 export function Layout({ children }) {
   return (
     <div className="min-h-screen flex flex-col">
+      <ScrollToTop />
       {/* Skip to content link for keyboard/screen reader users (a11y) */}
       <a
         href="#main-content"

@@ -1,8 +1,6 @@
 import { Button } from '../common'
-import { useIsMobile } from '../../hooks/useMediaQuery'
 
 export function HeroSection() {
-  const isMobile = useIsMobile()
 
   return (
     <section className="relative min-h-[85vh] md:min-h-[92vh] flex items-center overflow-hidden bg-simois-bordo">
@@ -22,7 +20,7 @@ export function HeroSection() {
       <div className="relative z-10 container mx-auto px-4 lg:px-6 py-16 md:py-24">
         <div className="max-w-3xl mx-auto text-center md:text-left md:mx-0">
           {/* Eyebrow text */}
-          <p className="text-simois-orange font-semibold text-xs md:text-sm tracking-[0.2em] uppercase mb-5 md:mb-6">
+          <p className="text-simois-orange font-semibold text-xs md:text-sm tracking-[0.15em] uppercase mb-5 md:mb-6">
             Premium Barbershop Experience
           </p>
 
@@ -34,7 +32,7 @@ export function HeroSection() {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-white/75 text-base md:text-xl max-w-xl mb-10 leading-relaxed mx-auto md:mx-0">
+          <p className="text-white/70 text-base md:text-xl max-w-xl mb-10 leading-relaxed mx-auto md:mx-0">
             Conocé a los maestros detrás de cada corte. Nuestro equipo de expertos está listo para elevar tu imagen al siguiente nivel.
           </p>
 

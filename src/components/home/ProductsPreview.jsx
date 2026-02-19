@@ -14,7 +14,7 @@ export function ProductsPreview() {
         <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           {/* Content */}
           <div>
-            <p className="text-simois-orange font-semibold text-xs tracking-[0.15em] uppercase mb-3">
+            <p className="text-simois-orange font-semibold text-xs md:text-sm tracking-[0.15em] uppercase mb-3">
               Línea exclusiva
             </p>
             <h2 className="font-bebas text-4xl md:text-5xl lg:text-6xl text-simois-dark leading-tight mb-6">

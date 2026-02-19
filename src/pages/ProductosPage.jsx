@@ -21,13 +21,13 @@ export default function ProductosPage() {
           <div className="absolute top-0 right-0 w-96 h-96 bg-simois-orange rounded-full blur-3xl" />
         </div>
         <div className="container mx-auto px-4 lg:px-6 text-center relative z-10">
-          <p className="text-simois-orange font-semibold text-xs tracking-[0.15em] uppercase mb-4">
+          <p className="text-simois-orange font-semibold text-xs md:text-sm tracking-[0.15em] uppercase mb-4">
             Línea Exclusiva
           </p>
           <h1 className="font-bebas text-5xl md:text-6xl lg:text-7xl text-white mb-4 leading-tight">
             Productos <span className="text-simois-orange">Simois</span>
           </h1>
-          <p className="text-white/65 max-w-xl mx-auto text-base md:text-lg leading-relaxed">
+          <p className="text-white/70 max-w-xl mx-auto text-base md:text-lg leading-relaxed">
             Mantené tu estilo sin esfuerzo en casa. Formulados específicamente para el hombre moderno.
           </p>
         </div>
@@ -78,7 +78,7 @@ export default function ProductosPage() {
             <h2 className="font-bebas text-3xl md:text-4xl lg:text-5xl text-white mb-4">
               Disponibles en Nuestros Locales
             </h2>
-            <p className="text-white/60 max-w-xl mx-auto mb-8 leading-relaxed">
+            <p className="text-white/70 max-w-xl mx-auto mb-8 leading-relaxed">
               Visitanos en cualquiera de nuestras ubicaciones para probar y adquirir nuestros productos premium.
             </p>
             <Link

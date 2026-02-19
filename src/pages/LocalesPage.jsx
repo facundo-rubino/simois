@@ -1,12 +1,26 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import { PageTransition } from '../components/layout'
 import { LocalCard } from '../components/locales'
 import { locales } from '../data/locales'
 
 export default function LocalesPage() {
   const activeLocales = locales.filter(l => l.activo)
+  const location = useLocation()
   // State para manejar el ID del local seleccionado
   const [selectedLocalId, setSelectedLocalId] = useState(null)
+
+  // Handle hash-based navigation (e.g., /locales#rambla)
+  useEffect(() => {
+    const hash = location.hash.replace('#', '')
+    if (hash && locales.find(l => l.id === hash)) {
+      setSelectedLocalId(hash)
+      // Scroll to the local card on mobile
+      setTimeout(() => {
+        document.getElementById(`local-${hash}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      }, 300)
+    }
+  }, [location.hash])
 
   // Obtener coordenadas del local seleccionado
   const selectedLocal = locales.find(l => l.id === selectedLocalId)
@@ -23,7 +37,7 @@ export default function LocalesPage() {
         {/* Sidebar with locations */}
         <div className="w-full lg:w-[420px] xl:w-[460px] bg-white lg:h-[calc(100vh-80px)] lg:sticky lg:top-20 overflow-y-auto">
           <div className="p-6 lg:p-8">
-            <p className="text-simois-orange font-semibold text-xs tracking-[0.15em] uppercase mb-2">
+            <p className="text-simois-orange font-semibold text-xs md:text-sm tracking-[0.15em] uppercase mb-2">
               Nuestros locales
             </p>
             <h1 className="font-bebas text-4xl lg:text-5xl text-simois-dark mb-2">
@@ -35,12 +49,13 @@ export default function LocalesPage() {
 
             <div className="space-y-1">
               {locales.map((local) => (
-                <LocalCard
-                  key={local.id}
-                  local={local}
-                  onViewMap={() => setSelectedLocalId(local.id)}
-                  isSelected={selectedLocalId === local.id}
-                />
+                <div key={local.id} id={`local-${local.id}`}>
+                  <LocalCard
+                    local={local}
+                    onViewMap={() => setSelectedLocalId(local.id)}
+                    isSelected={selectedLocalId === local.id}
+                  />
+                </div>
               ))}
             </div>
           </div>
